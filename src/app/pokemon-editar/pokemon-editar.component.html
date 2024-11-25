@@ -1,0 +1,44 @@
+<h2 mat-dialog-title align="center">{{pokemon.name}} </h2>
+<mat-dialog-content class="mat-typography">
+    <div style="text-align: center;">
+        <img src="{{data.avatar}}" alt="" style="width: 200px; height: 200px;">
+    </div>
+    <mat-divider></mat-divider><br>
+    <div class="nombreInput">
+        <mat-form-field appearance="outline" class="nombreElemento">
+            <mat-label>NOMBRE</mat-label>
+            <input [(ngModel)]="data.name" matInput value="{{data.name}}" class="custom-input">
+        </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+    <h3>Habilidades</h3>
+    <div class="statsLista">
+        <div *ngFor="let ability of data.abilities">
+            <mat-form-field appearance="outline" class="statElemento">
+                <mat-label>NOMBRE</mat-label>
+                <input [(ngModel)]="ability.ability.name" matInput value="{{ability.ability.name}}" class="custom-input">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+    <h3>Estadisticas</h3>
+    <div class="statsLista">
+        <div *ngFor="let stat of data.stats">
+            <mat-form-field appearance="outline" class="statElemento">
+                <mat-label>{{stat.stat.name}}</mat-label>
+                <input [(ngModel)]="stat.base_stat" matInput value="{{stat.base_stat}}" class="custom-input">
+            </mat-form-field>
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="data">
+        <div class="success">Aceptar</div>
+    </button>
+    <button mat-button mat-dialog-close>
+        <div class="rojo">Cancelar</div>
+    </button>
+</mat-dialog-actions>

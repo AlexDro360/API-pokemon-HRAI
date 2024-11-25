@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
@@ -17,12 +17,20 @@ import { UserService } from '../services/user.service';
   styleUrl: './barra-lateral.component.css',
   standalone: true,
   imports: [MatListModule, MatDividerModule, MatButtonModule, MatMenuModule, MatSidenavModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  
 })
-export class BarraLateralComponent {
+export class BarraLateralComponent implements OnInit{
+  user: any = {};
+
   constructor(private userservice :UserService){}
 
   cerrarSesion(){
     this.userservice.cerrarSesion();
+  }
+
+  ngOnInit(): void {
+    this.userservice.getUser().subscribe(data => {
+      this.user = data;
+    })
   }
 }

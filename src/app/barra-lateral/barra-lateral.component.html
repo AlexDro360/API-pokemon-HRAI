@@ -1,17 +1,18 @@
 <div class="menuL">
     <mat-list>
-        <div class="usuarioIcon">
-            <img src="/img/user_icon.png" alt="" >
+        <div class="elemento_menu" >
+            <img src={{user.avatar}} alt="" class="usuarioAvatar">
         </div>
         
-        <mat-list-item class="usuarioIcon"><div class="color_menu">Usuario</div></mat-list-item>
+        <mat-list-item class="elemento_menu"><div class="color_menu">{{user.name}}</div></mat-list-item>
+        <br>
         <mat-divider></mat-divider>
         <mat-list-item>
             <button mat-button class="botonM"><div class="color_menu">Inicio</div></button>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>
-            <button mat-button class="botonM"><div class="color_menu">Trabajos</div></button>
+            <button mat-button class="botonM"><div class="color_menu">Sobre esta pagina</div></button>
         </mat-list-item>
         <mat-divider></mat-divider>
         <mat-list-item>

@@ -1,35 +1,55 @@
-.menuS{
+.mat-toolbar {
     background-color: #005cbb;
-    margin: 0px;
-    padding:10px;
-    display: flex;
 }
 
-.sidenav{
-    padding:0px;
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.sidenav {
+    padding: 0px;
     margin: 0px;
     height: 100%;
 }
-.botonM{
+
+.botonM {
     margin: 0px;
 }
-.logo-ito{
+
+.logo-ito {
     width: 40px;
     height: 40px;
-  }
+    border-radius: 50%;
 
- .titulo{
+    padding: 0px;
+    margin: 0px;
+}
+
+.titulo {
     font-size: 15px;
     color: #d7e3ff;
     font-weight: bold;
     margin: 0px;
-    padding:10px;
+    padding: 10px;
     display: flex;
-  }
+}
 
-h1{
+button[mat-button] {
+    padding: 0px;
+    margin: 0px;
+}
+
+mat-icon{
+    padding: 0px;
+    margin: 0px;
+}
+
+h1 {
     text-align: center;
 }
-.color_menu{
+
+.color_menu {
     color: #d7e3ff;
+    padding: 0px;
+    margin: 0px;
 }

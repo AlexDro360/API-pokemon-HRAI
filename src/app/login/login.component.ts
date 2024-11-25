@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule,FormsModule ,MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule,MatCardModule, MatDividerModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent {
+export class LoginComponent{
   email: string = '';
   password: string = '';
   loginError: boolean = false;
@@ -43,8 +43,4 @@ export class LoginComponent {
       }
     })
   }
-
-  // inicioSesion(){
-  //   this.router.navigate(['/home']);
-  // }
 }

@@ -1,0 +1,29 @@
+<h2 mat-dialog-title align="center">{{data.name}} </h2>
+<mat-dialog-content class="mat-typography">
+  <div style="text-align: center;">
+    <img src="{{data.avatar}}" alt="" style="width: 200px; height: 200px;">
+  </div>
+
+  <mat-divider></mat-divider>
+  <h3>Habilidades</h3>
+  <div class="statsLista">
+    <div *ngFor="let ablity of data.abilities" class="statElemento">
+      <p>{{ablity.ability.name}} </p>
+    </div>
+  </div>
+  <br>
+
+  <mat-divider></mat-divider>
+  <h3>Estadisticas</h3>
+  <div class="statsLista">
+    <div *ngFor="let stat of data.stats" class="statElemento">
+      <p>{{stat.stat.name}} : {{stat.base_stat}} </p>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>
+    <div class="success">Aceptar</div>
+  </button>
+</mat-dialog-actions>

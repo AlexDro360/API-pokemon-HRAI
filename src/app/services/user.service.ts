@@ -31,4 +31,28 @@ export class UserService {
     this.router.navigate(['/login']);
   }
 
+  private getToken(): string | null{
+    return localStorage.getItem(this.token);
+  }
+
+  getUser():Observable<any>{
+    const token = this.getToken();
+    return this.http.get<any>("https://api.escuelajs.co/api/v1/auth/profile",{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  }
+
+  isAuthenticated(): boolean{
+    const token = this.getToken();
+    if(!token){
+      return false;
+    }
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const exp = payload.exp = 1000;
+    return Date.now() < exp;
+    
+  }
+  
 }

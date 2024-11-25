@@ -1,47 +1,54 @@
 <mat-sidenav-container class="sidenav">
     <div class="menuS">
-        <button (click)="sidenav.toggle()" mat-button>
-            <div class="color_menu"> <mat-icon>menu</mat-icon></div>
-           
-        </button>
+        <mat-toolbar>
+            <button (click)="sidenav.toggle()" mat-button>
+                <div class="color_menu"> <mat-icon>menu</mat-icon></div>
+            </button>
 
-        <img src="/img/ito.png" alt="ito" class="logo-ito">
-        <div class="titulo">Programación Web</div>
+            <img src="/img/ito.png" alt="" class="logo-ito">
+            <div class="titulo">Programación Web</div>
 
-        <div></div>
-        <button mat-button [matMenuTriggerFor]="aboveMenu"><div class="color_menu">Sobre esta pagina</div></button>
-        <mat-menu #aboveMenu="matMenu" yPosition="above">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-        </mat-menu>
+            <div></div>
+            <!-- <button mat-button [matMenuTriggerFor]="aboveMenu"><div class="color_menu">Sobre esta pagina</div></button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+    
+            <button mat-button [matMenuTriggerFor]="belowMenu"><div class="color_menu">Descargar</div></button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+    
+            <button mat-button [matMenuTriggerFor]="beforeMenu"><div class="color_menu">Principal</div></button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu>
+    
+    
+            <button mat-button [matMenuTriggerFor]="afterMenu"><div class="color_menu">Cambiar Tema</div></button>
+            <mat-menu #afterMenu="matMenu" xPosition="after">
+                <button mat-menu-item>Item 1</button>
+                <button mat-menu-item>Item 2</button>
+            </mat-menu> -->
+            <span class="example-spacer"></span>
+            <button (click)="cerrarSesion()" mat-button>
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+            <div>
+                <div><img src={{user.avatar}} alt="ito" class="logo-ito"></div>
+            </div>
 
-        <button mat-button [matMenuTriggerFor]="belowMenu"><div class="color_menu">Descargar</div></button>
-        <mat-menu #belowMenu="matMenu" yPosition="below">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
-        <button mat-button [matMenuTriggerFor]="beforeMenu"><div class="color_menu">Principal</div></button>
-        <mat-menu #beforeMenu="matMenu" xPosition="before">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
-
-        <button mat-button [matMenuTriggerFor]="afterMenu"><div class="color_menu">Cambiar Tema</div></button>
-        <mat-menu #afterMenu="matMenu" xPosition="after">
-            <button mat-menu-item>Item 1</button>
-            <button mat-menu-item>Item 2</button>
-        </mat-menu>
-
+        </mat-toolbar>
     </div>
-
     <mat-sidenav #sidenav mode="side" opened style="max-width: 200px; border-radius: 0">
         <div class="sidenav">
             <app-barra-lateral></app-barra-lateral>
         </div>
     </mat-sidenav>
 
-    <h1>Bienvenido a la pagina principal</h1>
-</mat-sidenav-container>
+    <app-pokemon-list></app-pokemon-list>
 
+</mat-sidenav-container>
