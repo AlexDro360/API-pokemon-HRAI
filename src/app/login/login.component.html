@@ -16,7 +16,7 @@
         </mat-form-field>
     
         <mat-form-field class="form-field">
-          <mat-label>Enter your password</mat-label>
+          <mat-label>Contraseña</mat-label>
           <input matInput [(ngModel)]="password" [ngModelOptions]="{standalone: true}" [type]="hide() ? 'password' : 'text'" />
           <button
             mat-icon-button
@@ -30,7 +30,7 @@
         </mat-form-field>
 
         <div class="alerta">
-          <mat-error *ngIf="loginError">Correo o contraseña incorrectas</mat-error>
+          <mat-error *ngIf="loginError">Correo o contraseña incorrecta</mat-error>
         </div>
         
     
